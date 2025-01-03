@@ -1,17 +1,30 @@
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Elys - Transform Your Business with AI Technology",
+  description:
+    "Discover Elys's innovative AI solutions including Omnia, OmniFS, and Linadraw. Transform your business with our cutting-edge artificial intelligence services.",
+};
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <section
+        className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden"
+        aria-labelledby="hero-heading"
+      >
         <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent dark:from-primary/10" />
         <div className="max-w-7xl mx-auto">
           <div className="text-center relative">
             {/* Hero Content */}
             <div className="space-y-4">
-              <div>
-                <h1 className="text-4xl sm:text-4xl md:text-6xl font-bold tracking-tight mb-1">
+              <header>
+                <h1
+                  id="hero-heading"
+                  className="text-4xl sm:text-4xl md:text-6xl font-bold tracking-tight mb-1"
+                >
                   <span>elys.work</span>
                 </h1>
                 <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight">
@@ -21,40 +34,53 @@ export default function Home() {
                     with AI Solutions
                   </span>
                 </h2>
-              </div>
+              </header>
 
               <p className="mt-8 text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
                 Elys delivers cutting-edge AI technology solutions that
-                transform businesses and drive innovation across industries.
+                transform businesses and drive innovation across industries. Our
+                suite of AI-powered tools and services helps organizations
+                achieve their digital transformation goals.
               </p>
             </div>
-            <div className="mt-12 flex gap-4 justify-center">
+            <nav
+              className="mt-12 flex gap-4 justify-center"
+              aria-label="Primary"
+            >
               <Link
                 href="/services"
                 className="rounded-lg px-6 py-3 bg-primary text-white hover:bg-primary/90 transition-all hover:scale-105"
+                aria-label="Explore our AI services"
               >
                 Explore Services
               </Link>
               <Link
                 href="/contact"
                 className="rounded-lg px-6 py-3 border border-gray-300 dark:border-gray-700 hover:border-primary hover:text-primary transition-all hover:scale-105"
+                aria-label="Contact Elys for AI solutions"
               >
                 Contact Us
               </Link>
-            </div>
+            </nav>
           </div>
         </div>
       </section>
 
       {/* Services Grid */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-800/50">
+      <section
+        className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-800/50"
+        aria-labelledby="services-heading"
+      >
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white">
+          <h2
+            id="services-heading"
+            className="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white"
+          >
             Our AI-Powered Solutions
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service) => (
-              <div
+              <article
                 key={service.name}
                 className="p-6 rounded-xl bg-white dark:bg-gray-900 shadow-sm hover:shadow-md transition-all hover:scale-105 hover:shadow-primary/10 border border-transparent hover:border-primary/20"
               >
@@ -64,7 +90,7 @@ export default function Home() {
                 <p className="text-gray-600 dark:text-gray-400">
                   {service.description}
                 </p>
-              </div>
+              </article>
             ))}
           </div>
         </div>
