@@ -107,7 +107,7 @@ export default function ContactPage() {
             </h2>
             <div className="flex justify-center space-x-6">
               <a
-                href="mailto:elys.dev@hotmail.com"
+                href="mailto:info@elys.work"
                 className="text-gray-600 hover:text-primary dark:text-gray-400 dark:hover:text-primary transition-colors"
               >
                 <FaEnvelope className="w-8 h-8" />
