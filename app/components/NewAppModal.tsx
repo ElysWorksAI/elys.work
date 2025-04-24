@@ -2,11 +2,13 @@
 
 import { useState } from "react";
 import { FaTimes } from "react-icons/fa";
+import { usePathname } from "next/navigation";
 
 export default function NewAppModal() {
   const [isOpen, setIsOpen] = useState(true);
+  const pathname = usePathname();
   // if route is not /, don't show the modal
-  if (window.location.pathname !== "/") return null;
+  if (pathname !== "/") return null;
   if (!isOpen) return null;
 
   return (
