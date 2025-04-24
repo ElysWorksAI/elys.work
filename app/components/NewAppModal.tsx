@@ -1,20 +1,12 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { FaTimes } from "react-icons/fa";
 
 export default function NewAppModal() {
-  const [isOpen, setIsOpen] = useState(false);
-
-  useEffect(() => {
-    // Check if the modal has been shown before
-    const hasShownModal = localStorage.getItem("hasShownBayesModal");
-    if (!hasShownModal) {
-      setIsOpen(true);
-      localStorage.setItem("hasShownBayesModal", "true");
-    }
-  }, []);
-
+  const [isOpen, setIsOpen] = useState(true);
+  // if route is not /, don't show the modal
+  if (window.location.pathname !== "/") return null;
   if (!isOpen) return null;
 
   return (
